@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="384.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.anagrammi.FXMLController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="384.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.anagrammi.FXMLController">
    <top>
       <Label text="Lab5_Anagrammi" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -13,4 +19,46 @@
          </BorderPane.margin>
       </Label>
    </top>
+   <center>
+      <VBox prefHeight="184.0" prefWidth="384.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="23.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="177.7999755859375" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.5999755859375" minWidth="0.0" prefWidth="30.200000000000017" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.8" minWidth="10.0" prefWidth="171.8" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="btnCalcola" mnemonicParsing="false" onAction="#calcolaAnagramma" prefHeight="26.0" prefWidth="129.0" text="Calcola Anagrammi" GridPane.columnIndex="3" />
+                  <TextField fx:id="txtInsertWord" prefHeight="26.0" prefWidth="162.0" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+            <GridPane prefHeight="30.0" prefWidth="384.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="120.80001831054688" minWidth="9.999975585937499" prefWidth="9.999975585937499" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.2000366210938" minWidth="10.0" prefWidth="359.2000366210938" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.199951171875" minWidth="10.0" prefWidth="11.599963378906239" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="25.60001983642578" minHeight="6.400006675720213" prefHeight="10.400006675720213" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="110.19999084472656" minHeight="10.0" prefHeight="106.9999786376953" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="46.39997177124023" minHeight="0.0" prefHeight="4.000021362304693" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <VBox prefHeight="289.0" prefWidth="384.0">
+               <children>
+                  <Label text="Anagrammi Corretti" />
+                  <TextArea fx:id="txtAnaCorretti" prefHeight="133.0" prefWidth="384.0" />
+                  <Label text="Anagrammi Errati" />
+                  <TextArea fx:id="txtAnaErrati" prefHeight="130.0" prefWidth="384.0" />
+               </children>
+            </VBox>
+            <Button fx:id="btnReset" mnemonicParsing="false" onAction="#reset" prefHeight="26.0" prefWidth="114.0" text="Reset" />
+         </children>
+      </VBox>
+   </center>
 </BorderPane>
